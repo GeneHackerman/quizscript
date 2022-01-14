@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Quiz Game</title>
 </head>
 <body>
-    
+    <h1 class="title">Pop Quiz, Hotshot!</h1>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button type="start-btn" class="start-btn btn">Start Quiz!</button>
+            <button type="submit-btn" class="submit-btn btn">Submit Quiz</button>
+        </div>
+    </div>
+    <div id="results"></div>
 </body>
 </html>
