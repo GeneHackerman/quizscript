@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- defer pushes js file -->
+    <script defer src="./assets/js/script.js"></script>
     <title>Quiz Game</title>
 </head>
 <body>
@@ -20,10 +22,12 @@
             </div>
         </div>
         <div class="controls">
-            <button type="start-btn" class="start-btn btn">Start Quiz!</button>
-            <button type="submit-btn" class="submit-btn btn">Submit Quiz</button>
+            <button type="start-btn" class="start-btn btn" id="start-btn">Start Quiz!</button>
+            <button type="next-btn" class="next-btn btn hide" id="next-btn">Next Question</button>
+            <button type="submit-btn" class="submit-btn btn hide">Submit Quiz</button>
         </div>
     </div>
     <div id="results"></div>
 </body>
 </html>
+

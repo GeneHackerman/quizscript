@@ -31,7 +31,37 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
+/* button styling start */
 .btn-grid {
     display: grid;
-    gap: 10px;
+    gap: 10px; 
+    margin: 20px 0;
 }
+
+.btn {
+    border: 1px solid purple;
+    padding: 10px 15px;
+    background: #0097e6;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+.start-btn, .submit-btn, .next-btn {
+    font-weight: bold;
+    padding: 20px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+} 
+
+/* button styling end */
