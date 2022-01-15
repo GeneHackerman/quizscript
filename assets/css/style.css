@@ -46,7 +46,7 @@ body {
 }
 
 .btn:hover {
-    background-color: red;
+    background-color: #7f8fa6;
 }
 
 .start-btn, .submit-btn, .next-btn {
