@@ -3,7 +3,7 @@ var nextButton = document.getElementById('next-btn')
 var questionContainerElement = document.getElementById('question-container')
 var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
-
+var quizTitleElement = document.getElementById('quiz-title')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -19,6 +19,8 @@ nextButton.addEventListener('click', () => {
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
+    //line 23(and anything else to hide) always set var first***
+    quizTitleElement.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -64,26 +66,32 @@ function selectAnswer(event) {
         setStatusClass(button, button.dataset.correct)
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide')        
     } else {
-        startButton.innerText = 'Restart'
+        startButton.innerText = 'Submit'
         startButton.classList.remove('hide')
     }
 }
 
+// will determine if answer is correct or incorrect
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
+        element.style.backgroundColor = 'green'
     } else {
         element.classList.add('wrong')
+        element.style.backgroundColor = 'red'
     }
+    
 }
 
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+
 
 // quiz questions with true/false values
 var questions = [
@@ -92,7 +100,7 @@ var questions = [
         answers: [
             {text: 'head', correct: true },
             {text: '<div>', correct: false },
-            {text: '<style>', correct: false}
+            {text: '<style>', correct: false }
         ]
 
     },
@@ -100,8 +108,27 @@ var questions = [
         question: "What is the correct syntax for referring to an externa script called xxx.js?",
         answers: [
             {text: '<script name="xxx.js"', correct: false },
-            {text: '<script href="xxx.js"', correct: false },
-            {text: '<script src="xxx.js"', correct: true}
+            {text: '<script src="xxx.js"', correct: true },
+            {text: '<script href="xxx.js"', correct: false }
+            
+        ]
+    },
+    {
+        question: "How do you create a function in JavaScript?",
+        answers: [
+            {text: 'function = myFunction()', correct: true},
+            {text: 'function:myFunction()', correct: false },
+            {text: 'function myFunction()', correct: false }
+            
+        ]
+    },
+    {
+        question: "How do you call a function named 'myFunction'?",
+        answers: [
+            {text: 'call myFunction()', correct: false },
+            {text: 'call function myFunction()', correct: false },
+            {text: 'myFunction()', correct: true },
         ]
     }
 ]
+
