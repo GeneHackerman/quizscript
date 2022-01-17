@@ -4,9 +4,26 @@ var questionContainerElement = document.getElementById('question-container')
 var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
 var quizTitleElement = document.getElementById('quiz-title')
-
+var startingMinutes = 5;
+let time = startingMinutes * 60;
 let shuffledQuestions, currentQuestionIndex
 
+
+// timer works, but need to connect to startGame function
+// timer appears next to question box as opposed to being located at top
+var countdownEl = document.getElementById('count-down');
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    var minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds; 
+
+    countdownEl.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+}
 
 // will listen for clicks on startGame and nextQuestion buttons
 startButton.addEventListener('click', startGame)
@@ -19,7 +36,7 @@ nextButton.addEventListener('click', () => {
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
-    //line 23(and anything else to hide) always set var first***
+    // line 23 will hide the quiz title upon start
     quizTitleElement.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -68,7 +85,7 @@ function selectAnswer(event) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')        
     } else {
-        startButton.innerText = 'Submit'
+        startButton.innerText = 'Submit' // need to add actual submit function to local storage
         startButton.classList.remove('hide')
     }
 }
