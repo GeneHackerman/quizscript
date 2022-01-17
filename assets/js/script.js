@@ -146,6 +146,29 @@ var questions = [
             {text: 'call function myFunction()', correct: false },
             {text: 'myFunction()', correct: true },
         ]
+    },
+    {
+        question: "The external JavaScript file must contain the <script> tag.",
+        answers: [
+            {text: 'False', correct: true},
+            {text: 'True', correct: false}
+        ]
+    },
+    {
+        question: "How can you add a comment in JavaScript?",
+        answers: [
+            {text: '<!--This is a comment-->', correct: false},
+            {text: 'This is a comment', correct: false},
+            {text: '//This is a comment', correct: true}
+        ]
+    },
+    {
+        question: "What is the correct way to write a JavaScrip array?",
+        answers: [
+            {text: 'var colors = "red", "green", "blue"', correct: false},
+            {text: 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")', correct: false},
+            {text: 'var colors = ["red", "green", "blue"]', correct: true}
+        ]
     }
 ]
 
